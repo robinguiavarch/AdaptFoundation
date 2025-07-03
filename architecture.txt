@@ -1,0 +1,93 @@
+AdaptFoundation-Phase1/
+├── README.md                          # Vue d'ensemble du projet + quick start
+├── SETUP.md                          # Instructions d'installation détaillées
+├── requirements.txt                  # Dépendances Python
+├── environment.yml                   # Environment conda (si utilisé)
+│
+├── config/                           # Configurations centralisées
+│   ├── models/                       # Configs spécifiques aux modèles
+│   │   ├── dinov2.yaml
+│   │   ├── clip.yaml
+│   │   ├── medsam.yaml
+│   │   └── monai.yaml
+│   ├── datasets/                     # Configs datasets
+│   │   ├── ukbiobank.yaml
+│   │   ├── accpatterns.yaml
+│   │   └── hcp.yaml
+│   └── experiments/                  # Configs expérimentales
+│       ├── zero_shot.yaml
+│       ├── linear_probing.yaml
+│       ├── adapters.yaml
+│       └── lora.yaml
+│
+├── src/                              # Code source principal
+│   ├── __init__.py
+│   ├── models/                       # Modèles et adaptations
+│   │   ├── __init__.py
+│   │   ├── foundation_models.py      # Wrappers modèles de fondation
+│   │   ├── adapters.py              # Implémentation adapters
+│   │   ├── lora.py                  # Implémentation LoRA
+│   │   └── linear_probing.py        # Linear probing utilities
+│   │
+│   ├── data/                        # Gestion des données
+│   │   ├── __init__.py
+│   │   ├── dataloader.py            # DataLoaders pour squelettes 3D
+│   │   ├── preprocessing.py         # Utils preprocessing
+│   │   └── augmentations.py         # Augmentations données
+│   │
+│   ├── training/                    # Entraînement et évaluation
+│   │   ├── __init__.py
+│   │   ├── trainer.py               # Classe trainer principale
+│   │   ├── evaluator.py             # Évaluation et métriques
+│   │   └── losses.py                # Loss functions
+│   │
+│   └── utils/                       # Utilitaires
+│       ├── __init__.py
+│       ├── metrics.py               # AUC, R², autres métriques
+│       ├── visualization.py         # Plots et visualisations
+│       └── logging_utils.py         # Logging et monitoring
+│
+├── scripts/                         # Scripts d'exécution
+│   ├── run_zero_shot.py             # Évaluation zero-shot
+│   ├── run_linear_probing.py        # Linear probing
+│   ├── run_adapters.py              # Entraînement adapters
+│   ├── run_lora.py                  # Entraînement LoRA
+│   └── generate_results.py          # Génération résultats pour article
+│
+├── experiments/                     # Expériences et résultats
+│   ├── zero_shot/                   # Résultats zero-shot
+│   │   ├── dinov2/
+│   │   ├── clip/
+│   │   └── medical_models/
+│   ├── linear_probing/              # Résultats linear probing
+│   ├── adapters/                    # Résultats adapters
+│   └── lora/                        # Résultats LoRA
+│
+├── notebooks/                       # Analyses et visualisations
+│   ├── 01_data_exploration.ipynb    # Exploration des données
+│   ├── 02_model_comparison.ipynb    # Comparaison modèles
+│   ├── 03_results_analysis.ipynb    # Analyse des résultats
+│   └── 04_figure_generation.ipynb   # Génération Figure 4 étendue
+│
+├── results/                         # Résultats finaux
+│   ├── figures/                     # Figures pour l'article
+│   │   ├── figure_4_extended.png
+│   │   └── performance_comparison.png
+│   ├── tables/                      # Tableaux de résultats
+│   │   ├── zero_shot_results.csv
+│   │   ├── adaptation_results.csv
+│   │   └── final_comparison.csv
+│   └── logs/                        # Logs d'expériences
+│
+├── docs/                            # Documentation
+│   ├── model_cards/                 # Documentation des modèles
+│   │   ├── dinov2_card.md
+│   │   ├── clip_card.md
+│   │   └── adapter_configs.md
+│   ├── experiment_logs/             # Logs détaillés des expériences
+│   └── troubleshooting.md           # Guide de résolution de problèmes
+│
+└── tests/                           # Tests unitaires
+    ├── test_models.py
+    ├── test_data.py
+    └── test_training.py
