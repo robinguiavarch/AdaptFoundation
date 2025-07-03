@@ -12,54 +12,16 @@ setup(
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
     install_requires=[
-        # Core dependencies from NeuroSpin/Champollion
         'pandas',
-        'scipy',
-        'psutil',
-        'matplotlib',
+        'numpy',  
         'torch',
-        'tqdm',
-        'pqdm',
-        'torchvision',
-        'torch-summary',
-        'tensorboard',
-        'hydra-core',
-        'hydra-joblib-launcher',
-        'dataclasses',
-        'OmegaConf',
+        'torchvision', 
         'scikit-learn',
-        'scikit-image',
-        'pytorch-lightning==2.1.3',
-        'lightly',
-        'plotly',
-        'toolz',
-        'ipykernel',
-        'kaleido',
-        'pytorch_ssim',
-        'seaborn',
-        'statsmodels',
-        'umap-learn',
-        'numpy',
-        'wandb',
-        'odfpy',
-        'captum',
-        
-        # Foundation Models specific dependencies
-        'timm>=0.6.0',                    # Transformers et ViTs
-        'transformers>=4.20.0',           # HuggingFace models
-        'open-clip-torch>=2.0.0',         # OpenCLIP implementations
-        'clip-by-openai',                 # Original CLIP
-        'dinov2',                         # DINOv2 if available via pip
-        
-        # Adaptation techniques
-        'peft>=0.3.0',                    # Parameter Efficient Fine-Tuning (LoRA, Adapters)
-        'loralib>=0.1.0',                 # LoRA implementation
-        
-        # Medical imaging (for MedSAM, MONAI)
-        'nibabel',                        # Neuroimaging data 
-        
-        # Additional utilities
+        'matplotlib',
         'PyYAML>=5.3.0',
+        'tqdm',
+        'timm>=0.6.0,<1.0',
+        'transformers>=4.20.0,<5.0',
     ],
     extras_require={
         "anatomist": [

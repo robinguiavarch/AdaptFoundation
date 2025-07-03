@@ -1,0 +1,7 @@
+# AdaptFoundation Dependencies
+# Core dependencies are managed through setup.py
+# Additional research dependencies:
+timm>=0.6.0  # Pour modèles de fondation
+transformers>=4.20.0  # Pour CLIP/DINOv2
+open-clip-torch>=2.0.0  # Pour CLIP variants
+
